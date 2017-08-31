@@ -1,0 +1,59 @@
+
+	<div class="formArea">
+		<div class="fa-tit">用户登录</div>
+		<div class="fa-con">
+		    <div class="inp-group">
+			    <label for="">账号：</label>
+			    <div class="inp">
+			    	<input type="text" placeholder="请输入您的账号" class="uName">
+			    </div>
+			</div>
+			
+		    <div class="inp-group">
+			    <label for="">密码：</label>
+			    <div class="inp">
+			    	<input type="password" placeholder="请输入您的密码" class="uPwd" >
+			    </div>
+			</div>	
+			<div class="inp-group bts">
+			    <button class="btn green fr login">立即登陆</button>
+			</div>		
+		</div>
+	</div>
+<script>
+$(function(){
+$("footer").hide();		
+})	
+
+</script>
+<script>
+function el(name){
+	return document.querySelector(name);
+}	
+var fa = el('.formArea');
+	
+fa.style.marginTop = - fa.clientHeight/2 + "px";	
+window.onresize = function(){
+	fa.style.marginTop = - fa.clientHeight/2 + "px";	
+}	
+</script>
+<script src='./js/jquery-1.9.1.min.js'></script>
+<script>
+	$(function(){
+    $(".login").click(function(){
+        var logindata = {
+            'uName': $(".uName").val(),
+            'uPwd': $('.uPwd').val()
+        }
+        $.post('/login', logindata, function(data){
+           console.log(data); // 没有任何数据传递
+           if(data == 'ok'){
+               alert('登陆成功');
+               window.location.href = '/list'
+           } else if(data == 'err') {
+               alert('账号或密码错误！');
+           }
+        });
+    })
+})    
+</script>

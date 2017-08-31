@@ -1,0 +1,392 @@
+@import url('public.css');
+
+header{
+	width: 1000px;
+	height: 80px;
+	margin: 0 auto 20px auto;
+	line-height: 80px;
+	font-size: 40px;
+}
+
+.container{
+	width: 1000px;
+	height: auto;
+	margin: auto;
+	overflow: hidden;
+}
+
+.content{
+	width: 820px;
+	height: auto;
+	border: 1px solid #e8e8e8;	
+	overflow: hidden;
+}
+
+.artList{
+	width: 820px;
+	height: auto;
+}
+
+.artList li{
+	width: auto;
+	height: auto;
+	margin: 0 20px;
+	padding: 20px 0;
+	border-bottom: 1px dashed #e8e8e8;
+}
+
+.artList li .img{
+	width: 180px;
+	height: 120px;
+	border: 1px solid #e8e8e8;
+	display: block;
+	float: left;
+}
+
+.artDetail{
+	width: auto;
+	height: 120px;
+	margin-left: 200px;
+}
+
+.artDetail .mores{
+	color: cornflowerblue;
+}
+
+.artDetail h4{
+	width: auto;
+	height: 40px;
+	line-height: 40px;
+	font-size: 16px;
+}
+
+.artDetail span.des{
+	width: auto;
+	height: 48px;
+	line-height: 24px;
+	display: block;
+	margin-bottom: 10px;
+}
+
+.aboutArt{
+	width: auto;
+	height: 22px;
+	line-height: 22px;
+	font-size: 12px;
+	text-align: right;
+}
+
+aside{
+	width: 140px;
+	height: auto;
+	padding: 10px;
+	float: right;
+	border: 1px solid #e8e8e8;
+	border-radius: 4px;
+}
+
+aside h3{
+    width: auto;
+	height: 40px;
+	line-height: 40px;
+	border-bottom: 1px solid #e8e8e8;
+	margin-bottom: 10px;
+}
+
+aside ul{
+	width: auto;
+	height: auto;
+	padding-left: 20px;
+	padding-bottom: 20px;
+	margin-bottom: 20px;
+	border-bottom: 1px solid #e8e8e8;
+}
+
+aside ul li{
+	height: 30px;
+	line-height: 30px;
+	list-style:circle;
+}
+
+.loginNow{
+	width: auto;
+	height: 40px;
+	font-size: 14px;
+	line-height: 40px;
+	text-align: right;
+	text-decoration: underline;
+	cursor: pointer;
+	color: cornflowerblue;
+}
+
+
+/* page begin */
+.page {
+  width: 674px;
+  height: auto;	
+  overflow: hidden;
+  margin: 50px auto;
+}
+
+.page ul {
+  width: auto;
+  float: left;
+  height: 32px; }
+
+.page li {
+  width: 30px; 
+}
+
+.page li, .page button {
+  height: 30px;
+  line-height: 30px;
+  text-align: center;
+  border: 1px solid #e8e8e8;
+  border-radius: 4px;
+  -webkit-border-radius: 4px;
+  -moz-border-radius: 4px;
+  -ms-border-radius: 4px;
+  -o-border-radius: 4px;
+  background: #FFF;
+  float: left;
+  margin: 0 5px;
+  color: #666;
+  cursor: pointer; }
+
+
+
+.page button {
+  width: 60px;
+  height: 32px;
+  line-height: 32px; }
+
+.page span {
+  width: auto;
+  height: 32px;
+  line-height: 32px;
+  display: block;
+  color: #333;
+  margin: 0 10px;
+  float: left; }
+
+.page .inp {
+  width: 50px;
+  height: 22px;
+  padding: 4px;
+  float: left;
+  background: #FFF;
+  border-radius: 4px;
+  -webkit-border-radius: 4px;
+  -moz-border-radius: 4px;
+  -ms-border-radius: 4px;
+  -o-border-radius: 4px;
+  border: 1px solid #e8e8e8; }
+
+.page .inp input {
+  width: 50px;
+  height: 22px;
+  line-height: 22px;
+  text-align: center;
+  border: none;
+  background: transparent;
+}
+
+.page .loadPage {
+  background: #333;
+  color: #FFF;
+  border-color: #333; }
+
+.page li a{
+	width: 100%;
+	height: 100%;
+	display: block;
+	border-radius: 4px;
+}
+
+.page li a.h{
+	background: #000;
+	color: #FFF;
+}
+
+/* page end*/
+
+.breads{
+	width: 1000px;
+	height: 30px;
+	font-size: 16px;
+	line-height: 30px;
+	margin: 10px auto;
+}
+
+
+
+
+/*input*/
+
+.formArea{
+	width: 400px;
+	height: auto;
+	border-radius: 4px;
+	overflow: hidden;
+	background: #FFF;
+	position: fixed;
+	z-index: 10;
+	left: 50%;
+	margin-left: -200px;
+	top: 50%;
+	border:1px solid #e8e8e8;
+}
+
+
+.fa-tit{
+	width: auto;
+	height: 40px;
+	padding: 0 20px;
+	background: #333;
+	color: #FFF;
+	font-size: 16px;
+	line-height: 40px;
+}
+
+.fa-con{
+	width: auto;
+	padding: 20px;
+}
+
+
+.inp{
+	width: auto;
+	height: 20px;
+	padding: 9px;
+	border: 1px solid #e8e8e8;
+	border-radius: 4px;
+}
+
+.inp input{
+	width: 100%;
+	height: 20px;
+	border: none;
+	outline: none;
+	background: transparent;
+}
+
+.inp-group{
+	width: auto;
+	min-height: 40px;
+	height: auto;
+	margin-bottom: 20px;
+}
+
+.inp-group label{
+	width: 50px;
+	height: 40px;
+	float: left;
+	line-height: 40px;
+}
+
+
+.inp-group .inp{
+	margin: 0 0px 0 50px;
+}
+
+.inp-group.new label{
+	width: 80px;
+}
+
+.inp-group.new .inp{
+	margin: 0 0px 0 80px;
+}
+
+
+.inp-group.bts{
+	margin-bottom: 0;
+}
+
+.inp-group.bts button{
+	width: auto;
+	padding: 10px;
+	background: #333;
+	border-radius: 4px;
+	color: #FFF;
+	margin-right: 20px;
+	float: right;
+}
+
+article{
+	width: 800px;
+	padding: 20px 10px;
+}
+
+.inp-group.ta label{
+	float: none;
+}
+
+.textarea{
+	width: auto;
+	padding: 10px;
+	height: auto;
+	border: 1px solid #e8e8e8;
+	float: none;
+	border-radius: 4px;
+}
+
+.textarea textarea{
+	width: 100%;
+	height: 60px;
+}
+
+.subArt{
+	width: auto;
+	height: 40px;
+	border-radius: 4px;
+	background: #333;
+	color: #FFF;
+	text-align: center;
+	line-height: 20px;
+	font-size: 16px;
+	padding: 0 20px;
+	float: right;
+	margin-bottom: 20px;
+	cursor: pointer;
+}
+
+.inp-group.w200{
+	width: 200px;
+	margin-right: 20px;
+	float: left;
+}
+
+.artImg{
+	width: 180px;
+	height: 120px;
+	border: 1px solid #e8e8e8;
+	border-radius: 4px;
+	margin-left: 50px;
+	cursor: pointer;
+	position: relative;
+}
+
+.artImg input{
+	width: 180px;
+	height: 120px;
+	opacity: 0;
+}
+
+.textarea.artInner{
+	padding: 0;
+	border: none;
+	height: 600px;
+	margin: 0;
+	padding-bottom: 50px;
+}
+
+.textarea .ql-toolbar.ql-snow{
+	border-top-left-radius: 4px;
+	border-top-right-radius: 4px;
+}
+
+footer{
+	width: auto;
+	text-align: center;
+	padding: 50px 0;
+}
