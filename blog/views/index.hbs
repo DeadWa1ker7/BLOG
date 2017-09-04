@@ -12,21 +12,22 @@
 	    	<div class="loginNow">
 				<a href="/reg">立即注册</a>
 	    		<a href='/login'> 立即登录</a>
+				<br>
+				<a href='/write'>写博客</a>
 	    	</div>
 	    </aside>
 		<div class="content">
 		    <ul class="artList">
 		        {{#each list}}
 				<li>
-					<a class="img" href="/list/?search={{this.artTit}}">
+					<a class="img" href="/article/?title={{this.artTit}}">
 						<img src="images/upload/test.png" alt="{{this.artTit}}">
 					</a>	
 					<div class="artDetail">
-						<h4 class="artTit">
-							{{this.artTit}}
-						</h4>
+						<h4 class="artTit">{{this.artTit}}</h4>
 						<span class="des">
-							{{this.artDes}}...&nbsp;&nbsp;<a class="mores" href="/list/?search={{this.artTit}}">[查看全文]</a>
+							{{this.artDes}}...&nbsp;&nbsp;<a class="mores" href="/article/?title={{this.artTit}}">[查看全文]</a>
+							<input type="button" class="del" value="删除本文">
 						</span>
 						<div class="aboutArt">
 							<span>作者：{{this.artAuthor}}</span>&nbsp;&nbsp;
@@ -64,6 +65,16 @@
 				$('.loadPage').click(function(){
 					var val =$('.pagenum').val()
 					window.location.href = '/?page='+val;
+				})
+				$('.del').click(function(){
+					 $(this).parent().parent().parent().remove();
+           			 var  deldata = {'artTit':$(this).parent().parent().children(0).html()}
+						console.log(deldata)
+           			 $.post('/', deldata, function(data){
+               			 if(data == 'ok'){
+               			alert('删除成功！');
+           			}
+       			 })
 				})
 			})
 		</script>

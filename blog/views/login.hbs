@@ -45,15 +45,21 @@ window.onresize = function(){
             'uName': $(".uName").val(),
             'uPwd': $('.uPwd').val()
         }
-        $.post('/login', logindata, function(data){
+		if(logindata.uName ==''||logindata.uPwd==''){
+			alert('请输入账号密码');
+			return;
+		}else{
+			$.post('/login', logindata, function(data){
            console.log(data); // 没有任何数据传递
            if(data == 'ok'){
                alert('登陆成功');
-               window.location.href = '/list'
+               window.location.href = '/'
            } else if(data == 'err') {
                alert('账号或密码错误！');
            }
         });
+		}
+      
     })
 })    
 </script>

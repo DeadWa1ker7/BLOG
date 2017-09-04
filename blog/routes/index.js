@@ -1,6 +1,7 @@
 var express = require('express');
 var router = express.Router();
 var find = require('../artlist').find;
+var delet = require('../artlist').del;
 
 router.get('/', function(req, res, next) {
 
@@ -15,9 +16,12 @@ router.get('/', function(req, res, next) {
 		nums.splice(3,0,'...');
         res.render('index', {pages: nums, list: datas});
     }, (getPage - 1)*5);    
-    
-    
 });
+router.post('/',function(req,res){
+    delet('user', function(data){
+        res.send(data);
+   }, {'artTit': req.body.artTit}); 
+})
 
 module.exports = router;
 

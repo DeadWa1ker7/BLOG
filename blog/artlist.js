@@ -30,7 +30,7 @@ function find(colname,fun,page){
                             }
                         }
                     });
-                    col.find().limit(5).skip(page).toArray(function(err, data){
+                    col.find().limit(5).skip(page).sort({'artDate':-1}).toArray(function(err, data){
                         if(!err){
                             datas =data;
                             if(data.length>0){
@@ -52,4 +52,72 @@ function find(colname,fun,page){
         }
     })
 }
+function insert(colName, fun, query){ //封装了一个查询方法
+    db.open(function(err){
+        if(!err){
+            db.collection(colName, function(err, col){
+                 if(!err){                    
+                    // toArray 以数组的形式抛出
+                    col.insert(query,function(err, data){
+                        if(!err){
+                            // 都是返回OK
+                            // 会给我们返回 一个空的数组
+                            if(data.length == 0){
+                                fun('err');
+                            } else {
+                                fun('ok');
+                            }    
+                        } else {
+                            fun('err');
+                        }
+                         db.close(); // 关闭数据库
+                    })  
+                 }
+            })
+        }
+    })
+}
+function findart(colName, fun, query){ //封装了一个查询方法
+    db.open(function(err){
+        if(!err){
+            db.collection(colName, function(err, col){
+                 if(!err){                    
+                    // toArray 以数组的形式抛出
+                    col.find({'artTit':query}).toArray(function(err, data){
+                        if(!err){
+                            // 都是返回OK
+                            // 会给我们返回 一个空的数组
+                            datas =data;
+                            if(data.length > 0){
+                                fun(datas);
+                            } else {
+                                fun('err');
+                            }    
+                        } else {
+                            fun('err');
+                        }
+                         db.close(); // 关闭数据库
+                    })  
+                 }
+            })
+        }
+    })
+}
+function del (colname,fun,query){
+    db.open(function(err){
+        if(!err){
+            db.collection(colname, function(err, col){
+                if(!err){
+                    col.deleteOne(query,function(err, data){
+                        fun('ok');
+                        db.close();
+                    });
+                }
+            })
+        }
+    })
+}
+exports.del = del;
+exports.findart = findart;
+exports.insert = insert;
 exports.find = find;

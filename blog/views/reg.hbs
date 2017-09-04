@@ -40,11 +40,13 @@ window.onresize = function(){
 <script src='./js/jquery-1.9.1.min.js'></script>
 <script>
     $('.reg').click(function(){
+		var v =/^[A-Za-z0-9]{4,16}$/;
        var regdata = {
             'uName': $(".uName").val(),
             'uPwd': $('.uPwd').val()
         }
-       $.post('/reg', regdata, function(data){
+		if(v.test(regdata.uName)){
+			$.post('/reg', regdata, function(data){
            console.log(data); // 没有任何数据传递
            if(data == 'ok'){
                alert('注册成功！');
@@ -55,5 +57,9 @@ window.onresize = function(){
                alert('请输入账号或密码！')
            }
         })
+		}else{
+			alert('请输入4-16位的账号！')
+		}
+       
     })
 </script>

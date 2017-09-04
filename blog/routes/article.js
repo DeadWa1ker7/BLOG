@@ -1,11 +1,13 @@
 var express = require('express');
 var router = express.Router();
-
+var findart = require('../artlist').findart;
 /* GET users listing. */
 router.get('/', function(req, res, next) {
-	var title = JSON.parse(req.query.title);
-	console.log(title)
-    res.render('article', { title: 'Express' });
+	var val = req.query.title.toString();
+	findart('user', function(datas){
+		res.render('article', {'list': datas[0]});
+		console.log(datas)
+	}, val);      
 });
 
 module.exports = router;
