@@ -30,7 +30,7 @@ function find(colname,fun,page){
                             }
                         }
                     });
-                    col.find().limit(5).skip(page).sort({'artDate':-1}).toArray(function(err, data){
+                    col.find().limit(5).skip(page).sort({'artYearM':-1,'artDay':-1}).toArray(function(err, data){
                         if(!err){
                             datas =data;
                             if(data.length>0){
@@ -83,7 +83,7 @@ function findart(colName, fun, query){ //封装了一个查询方法
             db.collection(colName, function(err, col){
                  if(!err){                    
                     // toArray 以数组的形式抛出
-                    col.find({'artTit':query}).toArray(function(err, data){
+                    col.find(query).toArray(function(err, data){
                         if(!err){
                             // 都是返回OK
                             // 会给我们返回 一个空的数组
@@ -103,6 +103,7 @@ function findart(colName, fun, query){ //封装了一个查询方法
         }
     })
 }
+
 function del (colname,fun,query){
     db.open(function(err){
         if(!err){
@@ -119,5 +120,6 @@ function del (colname,fun,query){
 }
 exports.del = del;
 exports.findart = findart;
+
 exports.insert = insert;
 exports.find = find;

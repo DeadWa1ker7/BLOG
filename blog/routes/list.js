@@ -3,10 +3,12 @@ var router = express.Router();
 var findart = require('../artlist').findart;
 /* GET users listing. */
 router.get('/', function(req, res, next) {
-  findart('user', function(datas){
-    res.render('list', {list: datas});
-},req.query.search);    
-
+	var val = req.query.time.toString();
+	findart('user', function(datas){
+		res.render('list', {'time': datas});
+		console.log(datas)
+	}, {'artYearM':val});      
 });
+
 
 module.exports = router;

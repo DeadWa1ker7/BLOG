@@ -7,7 +7,7 @@ router.get('/', function(req, res, next) {
 	findart('user', function(datas){
 		res.render('article', {'list': datas[0]});
 		console.log(datas)
-	}, val);      
+	},{'artTit':val});      
 });
 
 module.exports = router;

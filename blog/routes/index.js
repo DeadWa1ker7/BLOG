@@ -11,9 +11,10 @@ router.get('/', function(req, res, next) {
         var nums = [];
         for(var i = 0; i < num; i++){
             nums.push(i + 1);
-		}
+		}if(num>8){
 		nums.splice(3,(num-6));
-		nums.splice(3,0,'...');
+        nums.splice(3,0,'...');
+        }
         res.render('index', {pages: nums, list: datas});
     }, (getPage - 1)*5);    
 });
@@ -59,8 +60,3 @@ module.exports = router;
 // });
 
 // module.exports = router;
-
-
-
-
-

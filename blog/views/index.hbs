@@ -1,27 +1,31 @@
+		<style>
+			.txt{
+				border: 1px solid #eaeaea;
+				margin-top: 20px;
+				margin-left: 20px;
+			}
+		</style>
+
 	    <aside>
 	    	<h3>归档</h3>
 	    	<ul>
-	    		<li><a href="">2012年02月</a></li>
-	    		<li><a href="">2012年02月</a></li>
-	    		<li><a href="">2012年02月</a></li>
-	    		<li><a href="">2012年02月</a></li>
-				<li><a href="">2012年02月</a></li>
-				<li><a href="">2012年02月</a></li>
-    	        <li><a href="">2012年02月</a></li>
+	    		<li><a href="/list/?time=2017-7">2017年7月</a></li>
+	    		<li><a href="/list/?time=2017-8">2017年8月</a></li>
+	    		<li><a href="/list/?time=2017-9">2017年9月</a></li>
 	    	</ul>
 	    	<div class="loginNow">
-				<a href="/reg">立即注册</a>
-	    		<a href='/login'> 立即登录</a>
-				<br>
+				<a href="/reg">注册</a>
+	    		<a href='/login'> 登录</a>
 				<a href='/write'>写博客</a>
 	    	</div>
 	    </aside>
 		<div class="content">
+			<input type="text" class="txt">
 		    <ul class="artList">
 		        {{#each list}}
 				<li>
 					<a class="img" href="/article/?title={{this.artTit}}">
-						<img src="images/upload/test.png" alt="{{this.artTit}}">
+						<img src="images/upload/default.png" alt="{{this.artTit}}">
 					</a>	
 					<div class="artDetail">
 						<h4 class="artTit">{{this.artTit}}</h4>
@@ -31,7 +35,7 @@
 						</span>
 						<div class="aboutArt">
 							<span>作者：{{this.artAuthor}}</span>&nbsp;&nbsp;
-							<span>发表时间：{{this.artDate}}</span>&nbsp;&nbsp;
+							<span>发表时间：{{this.artYearM}}-{{this.artDay}}</span>&nbsp;&nbsp;
 							<span>阅读量：{{this.artCount}}</span>
 						</div>
 					</div>																	
@@ -62,6 +66,7 @@
 		<script src='js/jquery-1.9.1.min.js'></script>
 		<script>
 			$(function(){
+				
 				$('.loadPage').click(function(){
 					var val =$('.pagenum').val()
 					window.location.href = '/?page='+val;
@@ -78,5 +83,3 @@
 				})
 			})
 		</script>
-
-	

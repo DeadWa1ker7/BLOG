@@ -10,7 +10,7 @@ router.post('/', function(req, res, next) {
 	insert('user', function(data){
 		 res.send(data);
 	}, {'artTit': req.body.artTit, 'artDes': req.body.artDes,'artAuthor':req.body.artAuthor,
-	'artDate':req.body.artDate,'artCount':req.body.artCount,'artCon':req.body.artCon}); 
+	'artYearM':req.body.artYearM,'artDay':req.body.artDay,'artCount':req.body.artCount,'artCon':req.body.artCon}); 
   });
 // var deal = {
 // 	funs: {

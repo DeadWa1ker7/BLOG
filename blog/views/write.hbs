@@ -2,13 +2,9 @@
 	    <aside>
 	    	<h3>归档</h3>
 	    	<ul>
-	    		<li><a href="">2012年02月</a></li>
-	    		<li><a href="">2012年02月</a></li>
-	    		<li><a href="">2012年02月</a></li>
-	    		<li><a href="">2012年02月</a></li>
-				<li><a href="">2012年02月</a></li>
-				<li><a href="">2012年02月</a></li>
-    	        <li><a href="">2012年02月</a></li>
+	    		<li><a href="/list/?time=2017-7">2017年7月</a></li>
+	    		<li><a href="/list/?time=2017-8">2017年8月</a></li>
+	    		<li><a href="/list/?time=2017-9">2017年9月</a></li>
 	    	</ul>
 	    	<div class="loginNow">
 	    		立即登出
@@ -92,7 +88,8 @@
 					var artdata = {
 						artTit:$('.artTit').val(),
 						artAuthor:$('.artAuthor').val(),
-						artDate: y+'-'+m+'-'+d,
+						artYearM: y+'-'+m,
+						artDay:d,
 						artCount:'200',
 						artDes:$('.artDes').val(),
 						artCon:$('#editor .ql-editor p').html(),

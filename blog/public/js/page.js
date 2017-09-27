@@ -20,7 +20,7 @@ $(function(){
 	
 	$(".next").click(function(){
 		if(pageNum < lastNum){
-			console.log(lastNum + 1)
+			
 			window.location.href = '/?page=' + (pageNum + 1);
 		}
 	})	
